@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
             ColorObject("Orange", "#FFA500")
         )
 
-
+        // lambda function which can now be called
         val myRecyclerViewFunc = {colorObject:ColorObject ->
             layout.setBackgroundColor(Color.parseColor(colorObject.code))
         }
@@ -38,6 +38,12 @@ class MainActivity : AppCompatActivity() {
         // Assign a Grid layout manager with 2 columns
         recyclerView.layoutManager = GridLayoutManager(this, 2)
 
+        // adapters accept lambda functions as the last arg, which can be done as such instead:
+        /*recyclerView.adapter = ColorAdapter(colors) { colorObject:ColorObject ->
+            layout.setBackgroundColor(Color.parseColor(colorObject.code)
+        }
+        */
+        
         // Initialize adapter with lambda for event listening
         recyclerView.adapter = ColorAdapter(colors, myRecyclerViewFunc)
 
