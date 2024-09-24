@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+// unit basically means nothing. Lambda function returns nothing
 class ColorAdapter(_colorObjects : Array<ColorObject>, _myFunc : (ColorObject)->Unit) : RecyclerView.Adapter<ColorAdapter.ColorViewHolder>(){
 
     val colorObjects = _colorObjects
